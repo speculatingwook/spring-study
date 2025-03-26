@@ -77,7 +77,7 @@ public class FrontControllerServletV5 extends HttpServlet {
             }
         }
 
-        throw new IllegalArgumentException("handler adapter를 탖을 수 없습니다. handler: " + handler;
+        throw new IllegalArgumentException("handler adapter를 탖을 수 없습니다. handler: " + handler);
     }
 
     private Object getHandler(HttpServletRequest request) {
