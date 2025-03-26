@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- header -->
+<div th:insert="fragments/header :: header"></div>
+
+
+<div class="container">
+    <ul>
+        <li>ID: <span th:text="${board.id}"></span></li>
+        <li>제목: <span th:text="${board.title}"></span></li>
+        <li>내용: <span th:text="${board.content}"></span></li>
+    </ul>
+    <p><a th:href="@{/board/list}">목록 보기</a></p>
+</div>
+
+<!-- footer -->
+<div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

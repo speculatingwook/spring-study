@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 등록 성공</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- header -->
+<div th:insert="fragments/header :: header"></div>
+
+<header>
+    <h1>회원 등록 성공</h1>
+</header>
+
+<div class="container">
+    <ul>
+        <li>ID: <span th:text="${member.id}"></span></li>
+        <li>Username: <span th:text="${member.username}"></span></li>
+        <li>Age: <span th:text="${member.age}"></span></li>
+    </ul>
+    <p><a th:href="@{/springmvc/v3/members}">회원 목록</a></p>
+</div>
+
+<!-- footer -->
+<div th:insert="fragments/footer :: footer"></div>
+
+</body>
+</html>

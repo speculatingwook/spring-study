@@ -5,10 +5,8 @@ plugins {
     id 'war'
 }
 
-
 group = 'speculatingwook.spring'
 version = '1.0-SNAPSHOT'
-
 
 java {
     toolchain {
@@ -27,18 +25,18 @@ repositories {
 }
 
 dependencies {
+    // Spring Boot 웹 애플리케이션과 내장 톰캣 사용
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-    // Lombok
+    // Thymeleaf 템플릿 엔진 사용
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // Lombok (컴파일 시만 사용)
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // JSP
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-    implementation 'jakarta.servlet:jakarta.servlet-api'
-    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
-    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
-
+    // 테스트 관련 의존성
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

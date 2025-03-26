@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>메인 페이지</title>
+    <!-- 공통 CSS 적용 -->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- 헤더 프래그먼트 -->
+<div th:insert="fragments/header :: header"></div>
+
+<!-- 본문 내용 -->
+<div class="container">
+    <h2>메인 메뉴</h2>
+    <p>이곳은 메인 페이지입니다. 위의 메뉴를 통해 기능을 이용해보세요.</p>
+</div>
+
+<!-- 푸터 프래그먼트 -->
+<div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

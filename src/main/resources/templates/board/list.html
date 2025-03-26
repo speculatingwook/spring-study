@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- header -->
+<div th:insert="fragments/header :: header"></div>
+
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>제목</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.id}"></td>
+            <td>
+                <a th:href="@{/board/{id}(id=${post.id})}" th:text="${post.title}"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p><a th:href="@{/board/new}">새 게시글 작성</a></p>
+</div>
+
+<!-- footer -->
+<div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

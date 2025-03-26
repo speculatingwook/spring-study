@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- header -->
+<div th:insert="fragments/header :: header"></div>
+
+<div class="container">
+    <form th:action="@{/springmvc/v3/members/save}" th:object="${member}" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" th:field="*{username}" />
+            <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-message"></span>
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="text" th:field="*{age}" />
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error-message"></span>
+        </div>
+        <button type="submit">전송</button>
+    </form>
+    <p><a th:href="@{/index.html}">메인</a></p>
+</div>
+
+<!-- footer -->
+<div th:insert="fragments/footer :: footer"></div>
